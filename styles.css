@@ -1,6 +1,7 @@
 :root {
   --text-color: #0f0f1b;
   --brand-red: #ff4016;
+  --brand-green: #5db04f;
 }
 
 /* Typography */
@@ -54,6 +55,7 @@ h1 {
 h1 span {
   color: var(--text-color);
   font-family: "Evolventa";
+  display: block;
 }
 
 h1 strong {
@@ -124,6 +126,7 @@ footer {
 footer .container {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 section {
@@ -276,6 +279,87 @@ section {
 
 /* Section #4 */
 .section-4 {
-  background: rgba(15, 15, 27, 0.6) url(./assets/images/bg-fifth.jpg) no-repeat
-    fixed center;
+  background-color: #000;
+}
+
+/* Section #5 */
+.section-5 nav {
+  background-color: #f3f6f7;
+  margin-left: 0;
+  padding-left: 40px;
+}
+
+.section-5 .img-container {
+  position: relative;
+}
+
+.section-5 .img-container .example-work {
+  position: absolute;
+  bottom: 90px;
+  right: 72px;
+  font-size: 1.4rem;
+}
+
+/*Form*/
+.contact-form {
+  position: relative;
+  margin: 32px;
+}
+
+.contact-form input {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  padding: 16px;
+  border-radius: 2px 0 0 2px;
+  border: 0 none;
+  border: solid 1px #fff;
+  min-width: 300px;
+}
+.contact-form input:focus,
+.contact-form input:hover,
+.contact-form input:hover:focus,
+.contact-form input:focus-visible,
+.contact-form input:focus-within {
+  outline: 0 none;
+  border: solid 1px var(--brand-red);
+}
+
+.contact-form button {
+  background-color: var(--brand-red);
+  font-weight: bold;
+  color: #fff;
+  border: solid 1px var(--brand-red);
+  border-left: 0 none;
+  font-size: 1.6rem;
+  padding: 16px;
+  cursor: pointer;
+  margin-left: -5px;
+  transition: 0.8s;
+}
+
+.contact-form button:focus {
+  background-color: transparent;
+}
+
+span.validation {
+  font-size: 1.6rem;
+  padding-right: 5px;
+  position: absolute;
+  right: 85px;
+  top: 15px;
+}
+
+span.validation.valid {
+  background: transparent url(./assets/images/check-icon.png) no-repeat right
+    center;
+  color: var(--brand-green);
+  padding-right: 20px;
+}
+
+span.validation.invalid {
+  color: var(--brand-red);
+}
+
+span.validation.valid,
+span.validation.invalid {
 }

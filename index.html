@@ -8,7 +8,7 @@
     <meta name="keywords" content="data, ships, logistics" />
     <meta name="author" content="ShipXData" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.svg" />
+
     <link rel="stylesheet" href="./styles.css" />
     <link
       rel="stylesheet"
@@ -36,7 +36,7 @@
         <div class="container">
           <h1>
             <span>Navigate to Success!</span>
-            Revolutionize <strong>your Charter Operations!</strong>
+            Revolutionize <strong>your Charter <br />Operations!</strong>
           </h1>
           <img src="./assets/images/first-combo.png" alt="ShipXData" />
         </div>
@@ -344,8 +344,108 @@
         </div>
       </section>
 
-      <section class="steps-box" id="cargo_offer">
-        <div class="container">section #5</div>
+      <!--Section #5-->
+      <section class="common-section light-section section-5" id="cargo_offer">
+        <div class="container">
+          <nav>
+            <ul>
+              <li>
+                <a href="/#home" data-href="#home" class="hashtag">Home</a>
+              </li>
+              <li>
+                <a
+                  href="/#email-management"
+                  data-href="#email-management"
+                  class="hashtag"
+                  >Better Email Management</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/#broker-partners"
+                  data-href="#broker-partners"
+                  class="hashtag"
+                  >Verified broker partners</a
+                >
+              </li>
+              <li>
+                <a href="/#identity" data-href="#identity" class="hashtag"
+                  >Vessel’s Unique Identity</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/#cargo_offer"
+                  data-href="#cargo_offer"
+                  class="hashtag active"
+                  >Intelligent Cargo Offer Comparison&A</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="img-container">
+            <img src="./assets/images/pic-sixth.png" alt="SHipXData" />
+            <div class="example-work">
+              <span>
+                Mersin1 West Coast Italy<br />
+                Min 4000 / 4800cement in bulk<br />
+                Laycan SPOT <br />
+                2500 / 1000 sshex eiu <br />
+                3.75 % comm
+              </span>
+            </div>
+          </div>
+
+          <div class="text-container">
+            <h2>Intelligent Cargo Offer Comparison</h2>
+            <p>Make informed decisions at-a-glance</p>
+            <ul>
+              <li>
+                <span class="icon"></span>
+                <span class="text-wrapper">
+                  Save time and effort in finding the best offers
+                  <span
+                    >Take math analysis out of the equation – it is done for you
+                    automatically</span
+                  >
+                </span>
+              </li>
+              <li>
+                <span class="icon"></span>
+                <span class="text-wrapper">
+                  Discover your vessel's ideal price range for each specific
+                  deal
+                  <span
+                    >Offers are sorted according to your time charter
+                    equivalent</span
+                  >
+                </span>
+              </li>
+              <li>
+                <span class="icon"></span>
+                <span class="text-wrapper">
+                  Archive all incoming offers for easy reference
+                  <span
+                    >All past offers are searchable and at your fingertips at
+                    all times</span
+                  >
+                </span>
+              </li>
+
+              <li>
+                <span class="icon"></span>
+                <span class="text-wrapper">
+                  Grow your contact base as you use the platform
+                  <span
+                    >Gaining new contacts is a side effect of using the
+                    platform</span
+                  >
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -355,9 +455,11 @@
           Enter your e-mail now, and be the first one to receive access to our
           premium features.
         </p>
-        <form>
-          <input type="text" />
-          <button type="submit" />
+        <!-- add class 'valid' or 'invalid' to 'contact-form' after sending form-->
+        <form class="contact-form">
+          <input type="email" id="email-input" />
+          <span class="validation">Sent</span>
+          <button type="submit" id="submitBtn">Send</button>
         </form>
       </div>
     </footer>
@@ -384,6 +486,37 @@
             1000
           );
           return false;
+        }
+
+        //Validation email
+        // this is a simple and clever method to validate email address
+
+        var email_val = "";
+        var regexSimpleEmail = /@/;
+
+        $("#submitBtn").on("click", function (e) {
+          e.preventDefault();
+          email_val = $("#email-input").val();
+          if (validateEmail(email_val, regexSimpleEmail)) {
+            console.log("if", email_val);
+            $(".validation").removeClass("invalid");
+            $(".contact-form").submit();
+          } else {
+            console.log("else", email_val);
+            $(".validation")
+              .removeClass("valid")
+              .addClass("invalid")
+              .show()
+              .html("Invalid email");
+          }
+        });
+
+        function validateEmail(email_val, emailRegex) {
+          if (emailRegex.test(email_val)) {
+            return true;
+          } else {
+            return false;
+          }
         }
       });
     </script>
