@@ -8,7 +8,7 @@
     <meta name="keywords" content="data, ships, logistics" />
     <meta name="author" content="ShipXData" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
     <link rel="stylesheet" href="./styles.css" />
     <link
       rel="stylesheet"
@@ -23,15 +23,9 @@
       /></a>
     </div>
 
-    <!-- <header>
-      <div class="container">
-        
-      </div>
-    </header> -->
-
     <main>
       <!-- Section #0 -->
-      <section class="section-0" id="home">
+      <section class="section section-0" id="home">
         <div class="container">
           <h1>
             <span>Navigate to Success!</span>
@@ -42,7 +36,7 @@
       </section>
 
       <!-- Section #1 -->
-      <section class="section-1" id="home">
+      <section class="section section-1" id="home">
         <div class="wrapper">
           <div class="text-container">
             <h2>
@@ -84,7 +78,7 @@
 
       <!-- Section #2-->
       <section
-        class="common-section dark-section section-2"
+        class="section common-section dark-section section-2"
         id="email-management"
       >
         <div class="container">
@@ -165,7 +159,7 @@
 
       <!-- Section #3-->
       <section
-        class="common-section light-section section-3"
+        class="section common-section light-section section-3"
         id="broker-partners"
       >
         <div class="container">
@@ -249,7 +243,10 @@
       </section>
 
       <!--Section #4-->
-      <section class="common-section dark-section section-4" id="identity">
+      <section
+        class="section common-section dark-section section-4"
+        id="identity"
+      >
         <div class="container">
           <nav>
             <ul>
@@ -344,7 +341,10 @@
       </section>
 
       <!--Section #5-->
-      <section class="common-section light-section section-5" id="cargo_offer">
+      <section
+        class="section common-section light-section section-5"
+        id="cargo_offer"
+      >
         <div class="container">
           <nav>
             <ul>
@@ -465,6 +465,7 @@
 
     <script src="./js/jquery.min.js"></script>
     <script src="./js/jquery.scrollTo.js"></script>
+    <script src="./js/lax.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         let docWidth = window.innerWidth;
@@ -518,6 +519,61 @@
           }
         }
       });
+    </script>
+    <script type="text/javascript">
+      window.scrollTo(0, 0);
+
+      window.onload = function () {
+        lax.init();
+
+        lax.addDriver(
+          "scrollY",
+          function () {
+            return document.documentElement.scrollTop;
+          },
+          { frameStep: 1 }
+        );
+
+        lax.addElements(".section-0", {
+          scrollY: {
+            translateY: [
+              [-400, 0, 100],
+              [300, 0, 100],
+            ],
+            scale: [
+              [100, "screenHeight"],
+              [1, 10],
+            ],
+            opacity: [
+              [0, "screenHeight/2", "screenHeight"],
+              [1, 1, 0],
+            ],
+          },
+        });
+
+        lax.addElements(".common-section", {
+          scrollY: {
+            translateX: [
+              ["elInY", "elCenterY", "elOutY"],
+              [-1000, 0, 0],
+              {
+                easing: "easeInOutQuart",
+              },
+              {
+                inertia: 10, // Options
+              },
+            ],
+
+            opacity: [
+              ["elInY", "elCenterY", "elOutY"],
+              [0, 1, 0],
+              {
+                easing: "easeInOutCubic",
+              },
+            ],
+          },
+        });
+      };
     </script>
   </body>
 </html>
