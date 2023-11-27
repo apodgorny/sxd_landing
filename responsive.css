@@ -1,3 +1,8 @@
+:root {
+  --text-color: #0f0f1b;
+  --brand-red: #ff4016;
+  --brand-green: #5db04f;
+}
 @media screen and (max-width: 767px) {
   .section-1 .wrapper,
   .common-section .container,
@@ -14,14 +19,20 @@
     min-width: auto;
   }
   footer {
-    margin-top: 50px;
-    position: static;
+    background-color: var(--brand-red);
   }
   .common-section .text-container {
     height: auto;
   }
   .img-container {
     text-align: center;
+  }
+  .contact-form button {
+    border-color: #000;
+    background-color: #000;
+  }
+  .contact-form {
+    margin: 0 0 10px 0;
   }
 }
 

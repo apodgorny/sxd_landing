@@ -286,7 +286,7 @@
           </nav>
 
           <div class="img-container">
-            <img src="./assets/images/pic-fifth.png" alt="SHipXData" />
+            <div class="fake-img">&nbsp;</div>
           </div>
 
           <div class="text-container">
@@ -536,8 +536,8 @@
 
         lax.addElements(".section-0", {
           scrollY: {
-            translateY: [
-              [-400, 0, 100],
+            translateX: [
+              [-100, 0, 100],
               [300, 0, 100],
             ],
             scale: [
@@ -553,9 +553,10 @@
 
         lax.addElements(".common-section", {
           scrollY: {
-            translateX: [
+            translateY: [
               ["elInY", "elCenterY", "elOutY"],
-              [-1000, 0, 0],
+              [-"screenHeight/2", 0, "screenHeight/2git"],
+              // ["elOutY", "elCenterY", "elInY"],
               {
                 easing: "easeInOutQuart",
               },
