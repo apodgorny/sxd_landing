@@ -561,7 +561,7 @@
                 // [-100, 0, 100],
                 // [300, 0, 100],
                 ["elOutY", "elCenterY", "elInY"],
-                ["screenHeight", 0, "screenHeight"],
+                [0, 0, "screenHeight"],
                 {
                   easing: "easeInQuad",
                 },
@@ -570,13 +570,13 @@
                 },
               ],
 
-              // opacity: [
-              //   ["elInY", "elCenterY", "elOutY"],
-              //   [0, 1, 0],
-              //   {
-              //     easing: "easeInOutCubic",
-              //   },
-              // ],
+              opacity: [
+                ["elInY", "elCenterY", "elOutY"],
+                [0, 1, 1],
+                {
+                  easing: "easeInOutCubic",
+                },
+              ],
             },
           },
           {
