@@ -503,11 +503,15 @@ span.validation.invalid {
     padding-left: 12px;
     padding-right: 10px;
   }
+  .section-4 {
+    background-position: 190px center;
+  }
 }
 @media screen and (max-width: 1024px) {
   .section-4 {
-    padding-left: 128px;
-    padding-right: 100px;
+    padding-left: 12px;
+    padding-right: 10px;
+    background-position: 80px center;
   }
   main .section,
   .section-1 .container {
