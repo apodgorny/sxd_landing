@@ -375,6 +375,10 @@ section {
 .section-2 .text-container {
   background-color: #151622;
 }
+.common-section.section-2 .container {
+  position: relative;
+  z-index: 10;
+}
 /* Section #3 */
 .section-3 {
   background-color: #f3f6f7;
@@ -544,16 +548,6 @@ span.validation.invalid {
   top: 5vh;
 }
 
-.container {
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  direction: ltr;
-  width: 100vw;
-  -webkit-overflow-scrolling: touch;
-}
-
 h1 {
   top: 67vh;
   position: absolute;
@@ -578,4 +572,16 @@ p {
   padding-left: 200px;
   padding-right: 200px;
   box-sizing: border-box;
+}
+@media screen and (max-width: 1440px) {
+  main .container,
+  .section-1 .wrapper {
+    transform: scale(0.8);
+  }
+  .section-4 {
+    background-position: 120% center;
+  }
+  .fake-img {
+    height: 800px;
+  }
 }
