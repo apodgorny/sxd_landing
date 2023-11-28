@@ -484,15 +484,33 @@ span.validation.valid,
 span.validation.invalid {
 }
 
-@media screen and (max-width: 1440px) {
-  main .container,
-  .section-1 .wrapper {
+@media screen and (max-width: 1280px) {
+  main .section,
+  .section-1 .container {
     transform: scale(0.8);
   }
+
   .section-4 {
     background-position: 120% center;
   }
-  .fake-img {
-    height: 800px;
+  .common-section .img-container img {
+  }
+  .common-section .img-container {
+    min-width: 300px;
+    max-width: 300px;
+  }
+  .common-section .text-container {
+    padding-left: 12px;
+    padding-right: 10px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section-4 {
+    padding-left: 128px;
+    padding-right: 100px;
+  }
+  main .section,
+  .section-1 .container {
+    transform: scale(0.6);
   }
 }
